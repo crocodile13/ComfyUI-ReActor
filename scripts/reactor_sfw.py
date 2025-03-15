@@ -29,6 +29,6 @@ def nsfw_image(img_path: str, model_path: str):
         predict = pipeline("image-classification", model=model_path)
         result = predict(img)
         if result[0]["label"] == "nsfw" and result[0]["score"] > SCORE:
-            logger.status(f"NSFW content detected, skipping...")
-            return True
+            logger.status(f"NSFW content detected, but fuck...we can continue yeah")
+            return False
         return False
