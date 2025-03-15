@@ -24,7 +24,7 @@ SCORE = 0.96
 logging.getLogger("transformers").setLevel(logging.ERROR)
 
 def nsfw_image(img_path: str, model_path: str):
-    logger.status(f"NSFW content detected, but fuck...we can continue yeah")
+    logger.status(f"No NSFW verification.")
     return False
 
 #    ensure_nsfw_model(model_path)
@@ -32,6 +32,6 @@ def nsfw_image(img_path: str, model_path: str):
 #        predict = pipeline("image-classification", model=model_path)
 #        result = predict(img)
 #        if result[0]["label"] == "nsfw" and result[0]["score"] > SCORE:
-#            logger.status(f"NSFW content detected, but fuck...we can continue yeah")
-#            return False
+#            logger.status(f"NSFW content detected, skipping")
+#            return True
 #        return False
